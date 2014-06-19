@@ -1,0 +1,58 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-1" >
+			<img src="images/icon_128.png">
+		</div>
+		<div class="col-md-5">
+			<h2>GDG[x] Satellite</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div ng-switch on="user.logged_in">
+				<div ng-switch-when="true">
+					<form role="form">
+					<div class="form-group">
+					    <label for="inputFriendlyName">Enter a friendly name for your Satellite</label>
+					    <input type="text" ng-model="screen.friendly_name" class="form-control" id="inputFriendlyName" placeholder="Friendy Name">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputGroupCode">Please enter your group code (Screens in the same Location should share a code)</label>
+					    <input type="text" ng-model="screen.group_code" class="form-control" id="inputGroupCode" placeholder="Group Code">
+					  </div>
+					  <div class="form-group">
+					  	  <label for="inputCampaignId">Please select a Campaign</label>
+					  	  <select id="inputCampaignId" ng-model="screen.campaign_id" ng-options="campaign._id as campaign.name for campaign in campaigns" class="form-control">
+					      </select>
+					  </div>
+					  <div class="checkbox">
+					    <label>
+					      <input type="checkbox" ng-model="screen.handle_interrupts"> Allow Event Interrupts (NFC events, etc)
+					    </label>
+					  </div>
+					  <div class="checkbox">
+					    <label>
+					      <input type="checkbox" ng-model="screen.send_upstream_events"> Send Events upstream (say yes, if you have a NFC reader connected to this machine)
+					    </label>
+					  </div>
+					  <div class="form-group">
+					  	  <label for="inputScope">Please select an event scope (ie. which screens should receive your events (nfc, photos etc.)</label>
+					  	  <select id="inputScope" ng-model="screen.scope" class="form-control">
+					  	  	<option value="campaign" selected>Campaign (All Screens in Campaign)</option>
+					  	  	<option value="group">Group (All Screens with matching Group Code)</option>
+					      </select>
+					  </div>
+					  <button type="submit" class="btn btn-default" ng-click="connect()">Submit</button>
+					  <button type="submit" class="btn btn-default" ng-click="connectPhotobooth()">Special Role Photobooth</button>
+					</form>
+				</div>
+				<div ng-switch-default>
+
+					<b>You need to Sign-in to connect this Satellite with Ground Control</b><br/><br/>
+					<button type="button" class="btn btn-danger" ng-click="login()">Sign in with Google</button> 
+					<br/><br/>
+					This is GDG[x] Satellite 0.0.4
+				</div>
+		</div>
+	</div>
+</div>

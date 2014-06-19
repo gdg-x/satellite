@@ -1,0 +1,11 @@
+<div id="flash" ng-class="{visible: flash}"></div>
+<div id="load" ng-class="{visible: load}">
+	<img src="images/load.gif"/>
+</div>
+<div id="preview" ng-class="{visible: preview}">
+	<div id="send">Nice picture! <button type="button" class="btn btn-primary btn-large btn-extra" ng-click="sendPhoto()">Upload</button> or <button type="button" class="btn btn-danger btn-large btn-extra" ng-click="abort()">Abort</button></div>
+	<canvas width="100%" height="100%"></canvas>
+</div>
+<div id="countdown" ng-class="{visible: countdown_visible}">{{countdown}}</div>
+<div id="info">Touch screen to take a picture</div>
+<video autoplay ng-click="snapshot()"></video>

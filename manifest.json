@@ -1,0 +1,43 @@
+{
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhSv884VtfDRnEuOvL04BdOYMtadR4Eh0dYL9kIkx9UIee5hZJ0J0PDJc/vm6krxzColj6iWN1XIA0Y4gBCzDzd32EsR2uifWP3uh7OHCXn61xl8zr0vkPW0iu0v6b9sUSZFyjg1CJDU1ogjYifCr/WlvEHoeKURTS4RLl/GcmS4yaIEGiZkVXtw7HjLjHyInbbOwncMyOCTyLM1pgJi0N5WXBEtapnu021/K5gF78qY8k9wF4RUJl0Tpdk+WhwZxvTAe5jm4ffdf+5Knxml9LCt7ttgorKTUXr7Ajj8yu7rBIWWpW5Xw5S0uAuSqjL0gxjCG3/gNu5kYpqF/BIM4gwIDAQAB",
+  "name": "GDG[x] Satellite",
+  "version": "0.0.4",
+  "manifest_version": 2,
+  "icons": {
+    "128": "images/icon_128.png",
+    "48": "images/icon_48.png",
+    "16": "images/icon_16.png"
+  },
+  "app": {
+    "background": {
+      "scripts": [ "js/background.js" ],
+      "persistent": false
+    }
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "webview",
+    "videoCapture",
+    "tts",
+    "identity",
+    "geolocation",
+    "storage",
+    "usb",
+    {
+      "usbDevices": [
+        { "vendorId": 1254, "productId": 21905 },
+        { "vendorId": 1839, "productId": 8704 }
+      ]
+    }
+  ],
+  "oauth2": {
+    "client_id": "487571729383-4lm2hakb65g76qrb0oc17s9t6d91nl7v.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "kiosk_enabled": true,
+  "update_url": "https://clients2.google.com/service/update2/crx"
+}
